@@ -28,9 +28,6 @@ public class QuickSortTrace
         Random rand = new Random();
         for (int i = 1; i <= _n; i++) //shuffle array
             arraySwap(_A[i], rand.nextInt(_n)+1);
-        for (int i = 0; i <= _n; i++) //print array
-            System.out.println(i + ": "+ _A[i]);
-    
     }
 
     private void arraySwap(int i ,int j)
@@ -39,7 +36,6 @@ public class QuickSortTrace
         _A[i] = _A[j];
         _A[j] = temp;
     }
-    
     
     /**
      * Find the index of the k-th element in array A,
@@ -50,10 +46,17 @@ public class QuickSortTrace
      */
     public int randomizedSelect(int k)
     {
-        //inside note: be careful not to change the original array A
-        return 0;
+        int[] a = new int[_n+1];
+        for (int i = 1; i <= _n; i++)
+            a[i] = _A[i];
+        return randomizedSelect(a, 0, _n , k);
     }
     
+    //implement method from book, p.154
+    private int randomizedSelect(int[] a, int p, int r, int i)
+    {
+        return 0;
+    }
 
     /**
      * Sorts the array A using the QuickSort algorithem, 
