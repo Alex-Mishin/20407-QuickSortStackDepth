@@ -1,0 +1,32 @@
+#BlueJ class context
+comment0.params=i\ j
+comment0.target=int\ max(int,\ int)
+comment0.text=\n\ Select\ the\ maximum\ between\ two\ integers.\n\n\ @param\ i\ The\ first\ integer.\n\ @param\ j\ The\ second\ integers.\n
+comment1.params=a\ i\ j
+comment1.target=void\ arraySwap(int[],\ int,\ int)
+comment1.text=\n\ Swap\ two\ cells\ by\ given\ positions,\ within\ an\ array.\n\n\ @param\ i\ The\ index\ of\ the\ first\ cell.\n\ @param\ j\ The\ index\ of\ the\ second\ cell.\n
+comment2.params=
+comment2.target=java.lang.String\ toString()
+comment2.text=\n\ Print\ the\ array.\n
+comment3.params=n\ d
+comment3.target=QuickSortStackDepth(int,\ int)
+comment3.text=\n\ A\ constructor\ that\ build\ a\ shuffled\ array\ with\ n+1\ unique\ int\ values,\n\ from\ index\ 1\ to\ n+1\ (A[0]\ not\ used).\n\ \n\ The\ constructor\ accepts\ a\ custom\ pivot\ selection\ for\ the\ quick\ sort\ algorithem,\n\ where\ paramater\ d\ is\ the\ divisor.\n\ for\ example\ if\ d\ \=\ 2,\ then\ the\ algorithem\ will\ use\ the\ median\ of\ each\ sub-array\ as\ a\ pivot.\ \n\ \n\ @param\ n\ int,\ length\ of\ array\ to\ construct\n\ @param\ d\ int,\ divisor\ for\ pivot\ selection\n
+comment4.params=k
+comment4.target=int\ randomizedSelect(int)
+comment4.text=\n\ Finds\ the\ index\ of\ the\ k-th\ element\ in\ array\ A,\n\ for\ example,\ k\=1\ will\ return\ the\ index\ of\ the\ minimal\ element.\n\ The\ function\ will\ make\ a\ copy\ of\ the\ array\ to\ refrain\ from\ any\ changes\ to\ the\ original\ array.\n\n\ @param\ k\ \ \ \ \ k-th\ element\ to\ return\ from\ smallest\ to\ largest\n\ @return\ \ \ \ \ \ the\ index\ of\ the\ k-th\ element\n
+comment5.params=a\ p\ r\ i
+comment5.target=int\ randomizedSelect(int[],\ int,\ int,\ int)
+comment5.text=\n\ Randomized\ Select\ Algorithem.\n\ The\ implementation\ is\ based\ on\ the\ pseudo\ code\ from\ the\ course\ book,\ p.154\n\n\ @param\ a\ An\ array\ which\ contains\ the\ subarray\ to\ be\ sorted.\n\ @param\ p\ The\ subarray\ lower\ index.\n\ @param\ r\ The\ subarray\ upper\ index.\n\ @param\ i\ Size\ order\ of\ desired\ value.\n\ @return\ the\ index\ of\ the\ i-th\ element\n
+comment6.params=a\ p\ r
+comment6.target=int\ randomizedPartitioner(int[],\ int,\ int)
+comment6.text=\n\ Partitions\ a\ sub-array\ using\ a\ randomly\ chosen\ pivot.\n\ The\ implementation\ is\ based\ on\ the\ pseudo\ code\ from\ the\ course\ book,\ p.129\n\n\ @param\ a\ An\ array\ which\ contains\ the\ subarray\ to\ be\ partitioned.\n\ @param\ p\ The\ sub-array\ lower\ index.\n\ @param\ r\ The\ sub-array\ upper\ index.\n
+comment7.params=a\ p\ r
+comment7.target=int\ partition(int[],\ int,\ int)
+comment7.text=\n\ Partitions\ a\ sub-array\ using\ the\ last\ cell\ as\ a\ pivot.\n\ The\ implementation\ is\ based\ on\ the\ pseudo\ code\ from\ the\ course\ book,\ p.122\n\n\ @param\ a\ An\ array\ which\ contains\ the\ subarray\ to\ be\ partitioned.\n\ @param\ p\ The\ sub-array\ lower\ index.\n\ @param\ r\ he\ sub-array\ upper\ index.\n\ @return\ The\ pivot\ index\n
+comment8.params=
+comment8.target=int\ quickSortStackTrace()
+comment8.text=\n\ Sorts\ the\ array\ _A\ using\ the\ QuickSort\ algorithem,\ \n\ whilst\ selecting\ the\ pivot\ element\ according\ to\ the\ predefined\ divisor.\n\n\ @return\ maximum\ recursion\ depth\n
+comment9.params=p\ r\ k
+comment9.target=int\ quickSortStackTrace(int,\ int,\ int)
+comment9.text=\n\ Based\ on\ Quick\ Sort\ algorithem\ from\ book\ p.122,\ but\ whilst\ using\ the\ k-th\ element\ as\ pivot\n\ \n\ @param\ p\ The\ sub-array\ lower\ index.\n\ @param\ r\ he\ sub-array\ upper\ index.\n\ \n\ @return\ maximum\ recursion\ depth\n
+numComments=10
