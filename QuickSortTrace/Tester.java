@@ -9,18 +9,13 @@ public class Tester
 {
     public static void main()
     {
-        QuickSortTrace test = new QuickSortTrace(10,2);
-        test.quickSortStackTrace();
-        
-        
-        /*for(int n=10; n <= 40; n=n*2)
+        for(int n=100; n <= 400; n=n*2)
         {
-            for(int d=2; d <= 8; d=d*2)
+            for(int d=1; d <= 8; d=d*2)
             {
                 QuickSortTrace test = new QuickSortTrace(n,d);
-                System.out.println(test);
-                System.out.println("for an array with length n="+n+" and a divisor equal to d="+ d +" the maximum recursion stack is "+test.quickSortStackTrace()); 
+                System.out.println("for an array with length n="+n+" and a divisor equal to d="+ d +" the maximum recursion stack is "+test.quickSortStackTrace());
             }
-        }*/
+        }
     }
 }

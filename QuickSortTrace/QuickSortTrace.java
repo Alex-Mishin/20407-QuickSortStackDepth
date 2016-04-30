@@ -12,25 +12,8 @@ public class QuickSortTrace
     // instance variables
     private int[] _A;
     private int _n;
-    private int _divisor = 2;
+    private int _divisor;
 
-    /**
-     * A constructor that build an array with n+1 unique int values,
-     * from index 1 to n+1 (A[0] not used).
-     * 
-     * @param n int, length of array to construct
-     */
-    public QuickSortTrace(int n)
-    {
-        _A = new int[n+1];
-        _n = n;
-        for (int i = 1; i <= _n; i++) //fill array with numbers from 1 to n
-            _A[i] = i;
-        Random rand = new Random();
-        for (int i = 1; i <= _n; i++) //shuffle array
-            arraySwap(_A, _A[i], rand.nextInt(_n)+1);
-    }
-    
     /**
      * Allows choosing a custom pivot selection method for the quick sort algorithem,
      * where paramater d is the divisor.
@@ -85,7 +68,6 @@ public class QuickSortTrace
         for (int i = 1; i <= _n; i++)
             a[i] = _A[i];
         int selectedValue = randomizedSelect(a, 1, _n, k);
-        System.out.println(selectedValue);
         for (int i = 1; i <= _n; i++)
             if (_A[i]==selectedValue)
                 return i;
@@ -158,7 +140,7 @@ public class QuickSortTrace
         int x = a[r]; //pivot
         int i = p - 1;
         //iterate from beginning of the array to the last cell excluding the pivot itself.
-        for (int j = p; j < r-1; j++) {
+        for (int j = p; j <= r-1; j++) {
             if (a[j] <= x) {
                 i++;
                 arraySwap(a, i, j);
@@ -184,20 +166,16 @@ public class QuickSortTrace
     //Based on Quick Sort algorithem from book p.122, but whilst using the k-th element as pivot
     private int quickSortStackTrace(int p, int r, int k)
     {
-        System.out.println("p="+p+" r="+r+" k="+k);
         if (p<r)
         {
-            System.out.print(this);
             int pivot = randomizedSelect(k);    //select the k-th element
-            System.out.println("the "+k+"-th element is at index: "+pivot);
             arraySwap(_A, pivot, r);            //move k-th element to the last cell, and partition
             int q = partition(_A, p, r);  
             //recursive call modified to find the new reletive k-th pivot according to divisor
-            return max( quickSortStackTrace(p, q-1, (int)Math.ceil((double)(q-1)/_divisor)) + 1, 
-                        quickSortStackTrace(q+1, r, q + (int)Math.ceil((double)(r-q+1)/_divisor)) + 1);     
+            return max( quickSortStackTrace(p, q-1, p-1 +(int)Math.ceil((double)(q-p)/_divisor)) + 1,
+                        quickSortStackTrace(q+1, r, q + (int)Math.ceil((double)(r-q)/_divisor)) + 1);     
         }
-        //when condition is not met, maximum recursion depth has been reached (including lest level when no action was taken)
-        System.out.println("p="+p+" r="+r+" k="+k+" finished!");
+        //when condition is not met, maximum recursion depth has been reached (including last level when no action was taken)
         return 1; 
     }
     
