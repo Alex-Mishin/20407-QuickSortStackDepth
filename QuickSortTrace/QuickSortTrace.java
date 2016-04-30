@@ -73,7 +73,7 @@ public class QuickSortTrace
     }
 
     /**
-     * Find the index of the k-th element in array A,
+     * Finds the index of the k-th element in array A,
      * for example, k=1 will return the index of the minimal element.
      * 
      * @param k     k-th element to return from smallest to largest
@@ -84,7 +84,12 @@ public class QuickSortTrace
         int[] a = new int[_n+1];
         for (int i = 1; i <= _n; i++)
             a[i] = _A[i];
-        return randomizedSelect(a, 1, _n, k);
+        int selectedValue = randomizedSelect(a, 1, _n, k);
+        System.out.println(selectedValue);
+        for (int i = 1; i <= _n; i++)
+            if (_A[i]==selectedValue)
+                return i;
+        return 0;
     }
 
     /**
@@ -173,22 +178,26 @@ public class QuickSortTrace
      */
     public int quickSortStackTrace()
     {
-        return quickSortStackTrace(1, _n, (int)Math.ceil((double)(_n+1)/_divisor));
+        return quickSortStackTrace(1, _n, (int)Math.ceil((double)(_n-1)/_divisor)+1);
     }
 
     //Based on Quick Sort algorithem from book p.122, but whilst using the k-th element as pivot
     private int quickSortStackTrace(int p, int r, int k)
     {
+        System.out.println("p="+p+" r="+r+" k="+k);
         if (p<r)
         {
+            System.out.print(this);
             int pivot = randomizedSelect(k);    //select the k-th element
+            System.out.println("the "+k+"-th element is at index: "+pivot);
             arraySwap(_A, pivot, r);            //move k-th element to the last cell, and partition
-            int q = partition(_A, 1, _n);  
+            int q = partition(_A, p, r);  
             //recursive call modified to find the new reletive k-th pivot according to divisor
             return max( quickSortStackTrace(p, q-1, (int)Math.ceil((double)(q-1)/_divisor)) + 1, 
                         quickSortStackTrace(q+1, r, q + (int)Math.ceil((double)(r-q+1)/_divisor)) + 1);     
         }
         //when condition is not met, maximum recursion depth has been reached (including lest level when no action was taken)
+        System.out.println("p="+p+" r="+r+" k="+k+" finished!");
         return 1; 
     }
     

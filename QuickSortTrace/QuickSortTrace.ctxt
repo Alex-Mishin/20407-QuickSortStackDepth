@@ -14,7 +14,7 @@ comment3.params=
 comment3.target=java.lang.String\ toString()
 comment4.params=k
 comment4.target=int\ randomizedSelect(int)
-comment4.text=\r\n\ Find\ the\ index\ of\ the\ k-th\ element\ in\ array\ A,\r\n\ for\ example,\ k\=1\ will\ return\ the\ index\ of\ the\ minimal\ element.\r\n\ \r\n\ @param\ k\ \ \ \ \ k-th\ element\ to\ return\ from\ smallest\ to\ largest\r\n\ @return\ \ \ \ \ \ the\ index\ of\ the\ k-th\ element\r\n
+comment4.text=\r\n\ Finds\ the\ index\ of\ the\ k-th\ element\ in\ array\ A,\r\n\ for\ example,\ k\=1\ will\ return\ the\ index\ of\ the\ minimal\ element.\r\n\ \r\n\ @param\ k\ \ \ \ \ k-th\ element\ to\ return\ from\ smallest\ to\ largest\r\n\ @return\ \ \ \ \ \ the\ index\ of\ the\ k-th\ element\r\n
 comment5.params=a\ p\ r\ i
 comment5.target=int\ randomizedSelect(int[],\ int,\ int,\ int)
 comment5.text=\r\n\ Randomized\ Select\ Algorithemm.\r\n\ The\ implementation\ is\ based\ on\ the\ pseudo\ code\ from\ the\ course\ book,\ p.154\r\n\r\n\ @param\ a\ An\ array\ which\ contains\ the\ subarray\ to\ be\ sorted.\r\n\ @param\ p\ The\ subarray\ beginning\ index.\r\n\ @param\ r\ The\ subarray\ end\ index.\r\n\ @param\ i\ Size\ order\ of\ desired\ value.\r\n\ @return\ the\ index\ of\ the\ i-th\ element\r\n
