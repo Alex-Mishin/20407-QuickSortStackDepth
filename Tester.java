@@ -9,7 +9,7 @@ public class Tester
 {
     public static void main()
     {
-        int[] n = {100,200,300};
+        int[] n = {100,200,400};
         int k, depth;
         
         System.out.println("The QuickSort Stack Depth Tester:");

@@ -204,7 +204,7 @@ public class QuickSortStackDepth
             int q = partition(_A, p, r);
             //recursive call modified to find the new reletive k-th pivot according to divisor
             //in addition, a modification was made to sum the amount of recursive calls
-            return max(quickSortStackTrace(p, q-1, (int)Math.ceil((double)(q-1)/_divisor)) + 1, 
+            return max(quickSortStackTrace(p, q-1, p-1 +  (int)Math.ceil((double)(q-p)/_divisor)) + 1, 
                        quickSortStackTrace(q+1, r, q + (int)Math.ceil((double)(r-q+1)/_divisor)) + 1);     
         }
         //when condition is not met, maximum recursion depth has been reached (including lest level when no action was taken)
