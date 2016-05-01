@@ -24,12 +24,21 @@ target1.showInterface=false
 target1.type=ClassTarget
 target1.typeParameters=
 target1.width=80
+<<<<<<< HEAD:package.bluej
 target1.x=120
 target1.y=60
 target2.editor.height=873
 target2.editor.width=1440
 target2.editor.x=0
 target2.editor.y=23
+=======
+target1.x=110
+target1.y=70
+target2.editor.height=929
+target2.editor.width=1932
+target2.editor.x=-8
+target2.editor.y=127
+>>>>>>> refs/remotes/origin/master:QuickSortTrace/package.bluej
 target2.height=50
 target2.name=QuickSortStackDepth
 target2.naviview.expanded=false

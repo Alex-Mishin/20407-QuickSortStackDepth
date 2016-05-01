@@ -8,14 +8,27 @@ import java.util.Random;
 public class QuickSortStackDepth
 {
     private int[] _A;
+<<<<<<< HEAD:QuickSortStackDepth.java
+=======
+    private int _n;
+>>>>>>> refs/remotes/origin/master:QuickSortTrace/QuickSortTrace.java
     private int _divisor;
 
     //helper functions
     /**
+<<<<<<< HEAD:QuickSortStackDepth.java
      * Select the maximum between two integers.
      *
      * @param i The first integer.
      * @param j The second integers.
+=======
+     * Allows choosing a custom pivot selection method for the quick sort algorithem,
+     * where paramater d is the divisor.
+     * for example if d = 2, then the algorithem will use the median of each sub-array as a pivot. 
+     * 
+     * @param n int, length of array to construct
+     * @param d int, divisor for pivot selection
+>>>>>>> refs/remotes/origin/master:QuickSortTrace/QuickSortTrace.java
      */
     private int max(int i, int j)
     {
@@ -87,10 +100,15 @@ public class QuickSortStackDepth
         for (int i = 1; i <= _A.length-1; i++){
             //make a copy of the original array in order to avoid modifications on it
             a[i] = _A[i];
+<<<<<<< HEAD:QuickSortStackDepth.java
         }
         int selectedValue = randomizedSelect(a, 1, _A.length-1, k);
         for (int i = 1; i <= _A.length-1; i++){
             //search for the pivot value index in original array
+=======
+        int selectedValue = randomizedSelect(a, 1, _n, k);
+        for (int i = 1; i <= _n; i++)
+>>>>>>> refs/remotes/origin/master:QuickSortTrace/QuickSortTrace.java
             if (_A[i]==selectedValue)
                 return i;
             }
@@ -162,7 +180,11 @@ public class QuickSortStackDepth
     {
         int x = a[r]; //pivot
         int i = p - 1;
+<<<<<<< HEAD:QuickSortStackDepth.java
         //iterate through the array cells, excluding the pivot itself
+=======
+        //iterate from beginning of the array to the last cell excluding the pivot itself.
+>>>>>>> refs/remotes/origin/master:QuickSortTrace/QuickSortTrace.java
         for (int j = p; j <= r-1; j++) {
             if (a[j] <= x) {
                 i++;
@@ -196,6 +218,7 @@ public class QuickSortStackDepth
      */
     private int quickSortStackTrace(int p, int r, int k)
     {
+<<<<<<< HEAD:QuickSortStackDepth.java
         //System.out.println("p="+p+" r="+r+" k="+k);
         if (p<r)
         {
@@ -208,6 +231,18 @@ public class QuickSortStackDepth
                        quickSortStackTrace(q+1, r, q + (int)Math.ceil((double)(r-q+1)/_divisor)) + 1);     
         }
         //when condition is not met, maximum recursion depth has been reached (including lest level when no action was taken)
+=======
+        if (p<r)
+        {
+            int pivot = randomizedSelect(k);    //select the k-th element
+            arraySwap(_A, pivot, r);            //move k-th element to the last cell, and partition
+            int q = partition(_A, p, r);  
+            //recursive call modified to find the new reletive k-th pivot according to divisor
+            return max( quickSortStackTrace(p, q-1, p-1 +(int)Math.ceil((double)(q-p)/_divisor)) + 1,
+                        quickSortStackTrace(q+1, r, q + (int)Math.ceil((double)(r-q)/_divisor)) + 1);     
+        }
+        //when condition is not met, maximum recursion depth has been reached (including last level when no action was taken)
+>>>>>>> refs/remotes/origin/master:QuickSortTrace/QuickSortTrace.java
         return 1; 
     }
 }
